@@ -4,8 +4,15 @@
  * the buy button and the DexScreener link are derived from CONTRACT_ADDRESS.
  */
 
-/** Solana mint address. TODO: replace with the real mint at launch. */
-export const CONTRACT_ADDRESS = 'SiNEboyMEMEwave1111111111111111111111111pump'
+/**
+ * Solana mint address. Verified against DexScreener on 2026-09-02: name
+ * "Sineboy", symbol SINE, solana/pumpfun. Decodes to a valid 32-byte pubkey.
+ *
+ * Everything else on the page derives from this one string -- the buy button,
+ * the copy pill, the DexScreener and pump.fun links and the footer. Change it
+ * here and nowhere else.
+ */
+export const CONTRACT_ADDRESS = 'CM9yQ7HiyvDJYiJHYN66j7mYUJQz39hZPczuRJmDpump'
 
 export const TOKEN = {
   name: 'Sineboy',
