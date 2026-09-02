@@ -17,5 +17,10 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  // Vendored from 21st.dev and imported by nothing. It was written without
+  // strictNullChecks and has 7 errors under this project's settings, which
+  // blocks `tsc -b` and therefore every build and deploy. Excluded rather than
+  // edited so the component stays byte-identical to what was pasted in.
+  "exclude": ["src/components/ui/waves-shader.tsx"]
 }

@@ -23,7 +23,11 @@ npm run deploy    # build, then wrangler deploy
 ```
 
 `npm run deploy` needs `wrangler login` once. `wrangler.jsonc` serves `./dist`
-directly from the edge — there is no server code.
+directly from the edge - there is no server code.
+
+Live at **https://sineboy.fun**, attached as a Cloudflare custom domain, so
+Cloudflare owns the DNS record for the apex. workers.dev and preview URLs are
+turned off: sineboy.fun is the only origin this Worker answers on.
 
 ## Background animation
 
@@ -39,8 +43,11 @@ neon sine wave and grid floor on a canvas, fixed behind the page.
 
 ## Sections
 
-Hero · Ticker · Stats · How to buy · The chart · The cycle · Meme wall ·
-Tokenomics · Questions · Footer. All wired in [`src/App.tsx`](src/App.tsx).
+Hero · Ticker · Stats · How to buy · The cycle · Wave band · Tokenomics ·
+Questions · Footer. All wired in [`src/App.tsx`](src/App.tsx).
+
+The cycle section is one thing, not two: the sine is the diagram and UP / DOWN
+/ REPEAT are annotations on the points of the function they name.
 
 `STATS` in config is a **hand-maintained snapshot**, labelled as such on the
 page. Do not relabel that strip as live without wiring a real API behind it.
@@ -52,7 +59,6 @@ Depth is a gradient, not two extremes:
 | plane | speed |
 |---|---|
 | grid floor, three waves (inside the canvas) | 0.03x - 0.38x |
-| the art band, drifting in its own frame | 0.72x |
 | **everything readable** | **1.00x** |
 | ticker, section dividers | 1.20x - 1.32x |
 
@@ -67,6 +73,6 @@ reading computed styles in both modes.
 
 `public/sineboy-full.webp` (hero character), `public/sineboy-stand.webp`
 (how-to-buy), `public/favicon.png`, `public/pfp.png` (apple-touch-icon),
-`public/banner.jpg` (Open Graph + meme wall). Full-resolution originals are in
+`public/banner.jpg` (Open Graph). Full-resolution originals are in
 the repo root; the WebP files were re-encoded from them, so regenerate rather
 than editing in place.

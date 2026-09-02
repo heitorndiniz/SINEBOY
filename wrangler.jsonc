@@ -5,8 +5,20 @@
   // Assets-only Worker: no server code, Cloudflare serves ./dist straight from
   // the edge. `single-page-application` makes deep links fall back to index.html
   // (we have no router, but it also gives us a proper 200 on /#tokenomics reloads).
+  // Runs before every `wrangler deploy`, locally and in Cloudflare Workers
+  // Builds. dist/ is gitignored, so without this the CI runner has nothing to
+  // upload and deploy fails with "assets.directory does not exist".
+  "build": { "command": "npm run build" },
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application"
-  }
+  },
+  // custom_domain makes Cloudflare create and manage the DNS record for the
+  // apex itself; the zone has to live in the same account as this Worker.
+  "routes": [{ "pattern": "sineboy.fun", "custom_domain": true }],
+  // Stated rather than left to default: the default for both flips depending
+  // on whether `routes` is set, which silently changed the live URLs between
+  // two deploys. sineboy.fun is the only origin this Worker answers on.
+  "workers_dev": false,
+  "preview_urls": false
 }
