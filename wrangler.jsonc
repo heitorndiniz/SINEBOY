@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sineboy",
+  "compatibility_date": "2025-08-01",
+  // Assets-only Worker: no server code, Cloudflare serves ./dist straight from
+  // the edge. `single-page-application` makes deep links fall back to index.html
+  // (we have no router, but it also gives us a proper 200 on /#tokenomics reloads).
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}

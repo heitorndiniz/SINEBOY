@@ -1,0 +1,6 @@
+# Normalise line endings in the repo. Authored on Windows, deployed from Linux
+# CI -- without this the first checkout elsewhere shows every file as modified.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.webp binary
