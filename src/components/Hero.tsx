@@ -108,6 +108,30 @@ export default function Hero() {
             </a>
             <CopyAddress />
           </div>
+
+          {/* X sits above the fold because the footer is 4,000px away and this
+              is the link people look for before they buy. Kept quiet: the
+              yellow CTA stays the only loud thing in the hero. */}
+          <div
+            className="rise mt-5 flex justify-center lg:justify-start"
+            style={{ animationDelay: '340ms' }}
+          >
+            <a
+              href={LINKS.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-mono text-[0.72rem] tracking-[0.14em] text-dim transition-colors duration-200 hover:text-cyan"
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="size-3.5 fill-current"
+              >
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              @sineboysol
+            </a>
+          </div>
         </div>
       </div>
 

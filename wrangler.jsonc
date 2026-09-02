@@ -15,7 +15,12 @@
   },
   // custom_domain makes Cloudflare create and manage the DNS record for the
   // apex itself; the zone has to live in the same account as this Worker.
-  "routes": [{ "pattern": "sineboy.fun", "custom_domain": true }],
+  // Both hostnames, because people type www and a bare apex alone gives them
+  // NXDOMAIN rather than a redirect.
+  "routes": [
+    { "pattern": "sineboy.fun", "custom_domain": true },
+    { "pattern": "www.sineboy.fun", "custom_domain": true }
+  ],
   // Stated rather than left to default: the default for both flips depending
   // on whether `routes` is set, which silently changed the live URLs between
   // two deploys. sineboy.fun is the only origin this Worker answers on.
