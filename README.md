@@ -9,7 +9,7 @@ Everything that changes lives in [`src/config.ts`](src/config.ts):
 
 - `CONTRACT_ADDRESS` — currently a **placeholder**. Replace with the real mint.
   The Buy button, the DexScreener link and the pump.fun link are all derived from it.
-- `LINKS.x` / `LINKS.telegram` — placeholder handles.
+- `LINKS.x` — the real account. There is no Telegram; do not add a dead one.
 - `TOKENOMICS` / `STEPS` — copy for the two content sections.
 
 ## Commands

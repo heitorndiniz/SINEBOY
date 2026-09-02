@@ -19,7 +19,6 @@ export const LINKS = {
   pumpfun: `https://pump.fun/coin/${CONTRACT_ADDRESS}`,
   dexscreener: `https://dexscreener.com/solana/${CONTRACT_ADDRESS}`,
   x: 'https://x.com/sineboysol',
-  telegram: 'https://t.me/sineboysol',
 } as const
 
 /**

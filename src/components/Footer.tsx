@@ -2,7 +2,6 @@ import { CONTRACT_ADDRESS, LINKS, TOKEN } from '../config'
 
 const SOCIALS = [
   { label: 'X', href: LINKS.x },
-  { label: 'Telegram', href: LINKS.telegram },
   { label: 'DexScreener', href: LINKS.dexscreener },
   { label: 'pump.fun', href: LINKS.pumpfun },
 ]
